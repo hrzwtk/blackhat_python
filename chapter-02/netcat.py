@@ -44,6 +44,7 @@ class NetCat:
             self.send()
 
     def listen(self):
+        print('Listening...')
         self.socket.bind((self.args.target, self.args.port))
         self.socket.listen(5)
         while True:
@@ -160,4 +161,4 @@ if __name__ == '__main__':
         buffer = sys.stdin.read()
     
     nc = NetCat(args, buffer.encode())
-    nc.run
+    nc.run()
